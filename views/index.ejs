@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+
+<div class="container main">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Blogging site </h1>
+            <p></p>
+        </div>
+    </header>
+    <div class="row">
+        <% blogs.forEach(function(blog){ %>
+        <div class="col-sm-4">
+            <div class="img-thumbnail">
+                 <img src="<%= blog.image %>">
+                 <div class="caption">
+                     <h4><strong><%= blog.title %></strong></h4>
+                 </div>
+                  <p><%= blog.body.substring(0,100) %>...</p>
+                   
+                   <a href="/blogs/<%= blog._id %>" class="ui basic green button">More Info</a>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>
